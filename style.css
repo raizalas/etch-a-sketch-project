@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    background-color: bisque;
+}
+
+.grid-container {
+    display: flex;
+    height: 700px;
+    width: 700px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+
+.grid-container>div {
+    flex-basis: calc(100% / 16); /* Automatically calculate the size of each grid item */
+    height: calc(100% / 16);
+    background-color: #f2f2f2; /* Add a background color if desired */
+    border: 1px solid #ddd; /* Add a border if desired */
+  }
