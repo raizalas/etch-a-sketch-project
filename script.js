@@ -1,21 +1,29 @@
 const GRIDSIZE = 600;
-let gridRows = 24;
-let gridColumns = 24;
+let colorChange = 'black';
 
 const gridArea = document.querySelector("#grid-area");
 gridArea.style.width = `${GRIDSIZE}px`;
 gridArea.style.height = `${GRIDSIZE}px`;
 
-function createCells() {
-  for (let i = 0; i < gridRows * gridColumns; i++) {
+function changeBackgroundColor() {
+  this.style.backgroundColor = colorChange
+}
+
+function createCells(gridSide) {
+  const gridSquareArea = gridSide * gridSide
+  const gridWidthHeight = `${GRIDSIZE / gridSide - 2}px`
+  for (let i = 0; i < gridSquareArea; i++) {
     const gridCell = document.createElement("div");
 
-    gridCell.style.width = `${GRIDSIZE / gridColumns - 2}px`;
-    gridCell.style.height = `${GRIDSIZE / gridRows - 2}px`;
+    gridCell.style.width = gridWidthHeight;
+    gridCell.style.height = gridWidthHeight;
     gridCell.classList.add("cell");
 
     gridArea.appendChild(gridCell);
+
+    gridCell.addEventListener('mouseover', changeBackgroundColor)
+   
   }
 }
 
-createCells()
+createCells(16)
