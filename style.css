@@ -11,10 +11,31 @@ body {
     background-color: white;
     display: flex;
     flex-wrap: wrap;
-    margin: 100px auto;
+    margin: 50px auto 0 auto;
 }
 
 
 .cell {
     border: 1px solid gray;
   }
+
+.slider-container {
+    width: 40vw;
+    margin: 10px auto;
+}
+
+#slider{
+    appearance: none;
+    height: 25px;
+    width: 100%;
+    background: rgba(58, 71, 54, 0.726);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider-value {
+    margin: 0 auto;
+    text-align: center;
+}
